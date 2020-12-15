@@ -1,0 +1,116 @@
+function sayHello() {
+  console.log("hello");
+}
+// Calling Ivoking a function
+sayHello();
+
+//Function with Parameter
+function sayGoodbye(name) {
+  console.log("Goodbye " + name);
+}
+sayGoodbye("Segaran");
+sayGoodbye("Mr.Spade");
+
+// Function with written statement
+function calculateSum(num1, num2) {
+  return num1 + num2;
+}
+console.log(calculateSum(2, 3));
+console.log(calculateSum(5, 9));
+
+//Function with multiple return statement
+
+function calculateAreaAndVolume(length, width, height) {
+  return [length * width, length * width * height];
+}
+console.log(calculateAreaAndVolume(3, 4, 5));
+console.log(calculateAreaAndVolume(7, 8, 9));
+
+function minMaxAvg(num1, num2, num3) {
+  var min;
+  var max;
+  var avg;
+  // You start with adding the avg's formulae
+  var avg = (num1 + num2 + num3) / 3;
+  //formula for min
+  if (num1 < num2) {
+    if (num1 < num3) {
+      min = num1;
+    } else {
+      if (num2 < num3) {
+        min = num2;
+      } else {
+        min = num3;
+      }
+    }
+    return [min, max, avg];
+  }
+  console.log(minMaxAvg(2, 3, 4));
+  console.log(minMaxAvg(4, 0, 2));
+  console.log(minMaxAvg(-1, 3, -4));
+
+  if (num1 > num2) {
+    if (num1 > num3) {
+      max = num1;
+    } else {
+      max = num3;
+    }
+  } else {
+    if (num2 > num3) {
+      max = num2;
+    } else {
+      max = num3;
+    }
+  }
+  return [min, max, avg];
+}
+
+console.log(minMaxAvg(2, 3, 4));
+console.log(minMaxAvg(4, 0, 2));
+console.log(minMaxAvg(-1, 3, -4));
+
+// Array
+
+var scores = [80, 90, 88, 70, 60, 78];
+
+console.log(score[0]);
+console.log(score[1]);
+
+//Iterating an array
+
+for (var i = 0; i < score.length; i++) {
+  console.log(score[i]);
+}
+console.log(score.length);
+
+score.push(42);
+console.log(scores.length);
+console.log(scores);
+
+function minMaxAvgArr(arr) {
+  // Iassume that first item is the smallest and the largest
+  var min = arr[0];
+  var max = arr[0];
+  var avg;
+  var sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  avg = sum / arr.length;
+
+  for (var i = 0; i < arr.length; i++) {
+    if (min > arr[i]) {
+      min = arr[i];
+    }
+  }
+  for (var i = 0; i < arr.length; i++) {
+    if (min < arr[i]) {
+      min = arr[i];
+    }
+  }
+
+  return [min, max, avg];
+}
+console.log(minMaxAvgArr([3, 1, 9, 0, -3, 2]));
+console.log(minMaxAvgArr([20, 10, 32, 100, 9, -40, 80, 10]));
+console.log(minMaxAvgArr([111, 101, 121]));
